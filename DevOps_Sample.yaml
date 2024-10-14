@@ -11,7 +11,7 @@ stages:
         steps:
         - task: ServiceNow-DevOps-Server-Change-Acceleration@1
           inputs:
-           connectedServiceName: 'dev271065-Globex-ServiceNow DevOps Service Connection'
+           connectedServiceName: 'sysintegraptyltddemo17-Sysintegra Devops Testing-ServiceNow DevOps Service Connection'
            changeRequestDetails:  |
             {
                 "setCloseCode" : true,
