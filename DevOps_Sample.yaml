@@ -4,28 +4,41 @@ pool:
   vmImage: ubuntu-latest
 
 stages:
-  - stage: servicenowStage
+  - stage: Build
     jobs:
-      - job: ServiceNow_job
-        pool: server
+      - job: Build_Job_A
         steps:
+          - script: echo This is the first Build Job!
+  - stage: Test
+    jobs:
+     - job: Test_Job_A
+       steps:
+        - script: echo This is the first Test Job!
+
+  - stage: Prod_Deploy    
+    jobs:
+     - job: Prod_Job_A
+       pool: server
+       steps:
+#- script: echo This is the first Prod-deploy Job!
         - task: ServiceNow-DevOps-Server-Change-Acceleration@1
           inputs:
-           connectedServiceName: 'sysintegraptyltddemo17-Sysintegra DevOps Onboard-ServiceNow DevOps Service Connection'
-           changeRequestDetails:  |
-            {
+            connectedServiceName: 'sysintegraptyltddemo17-Sysintegra DevOps Onboard-ServiceNow DevOps Service Connection'
+            changeRequestDetails: |              
+              {
                 "setCloseCode" : true,
                 "attributes": {
                   "requested_by": {
                     "user_name": "Abel.tuter"
                   },
                   "assignment_group": {
-                    "name": "App Engine Admins"
+                    "sys_id": "477a05d153013010b846ddeeff7b1225"
                   },
                   "start_date": "2025-01-05 08:00:00",
                   "end_date": "2025-01-08 08:00:00",
                   "cab_required": "true",
                   "priority": 2,
+                  "u_sample": "This is sample string",
                   "work_notes": "Text from devops"
                 }
               }
