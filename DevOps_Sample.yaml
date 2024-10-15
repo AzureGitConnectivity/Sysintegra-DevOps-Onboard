@@ -38,7 +38,6 @@ stages:
                   "end_date": "2025-01-08 08:00:00",
                   "cab_required": "true",
                   "priority": 2,
-                  "u_sample": "This is sample string",
                   "work_notes": "Text from devops"
                 }
               }
