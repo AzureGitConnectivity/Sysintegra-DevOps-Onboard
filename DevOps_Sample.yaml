@@ -32,7 +32,7 @@ stages:
                     "user_name": "Abel.tuter"
                   },
                   "assignment_group": {
-                    "sys_id": "477a05d153013010b846ddeeff7b1225"
+                    "name": "Software"
                   },
                   "start_date": "2025-01-05 08:00:00",
                   "end_date": "2025-01-08 08:00:00",
