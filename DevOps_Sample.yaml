@@ -17,12 +17,15 @@ stages:
                 "setCloseCode" : true,
                 "attributes": {
                   "requested_by": {
-                    "user_name": "abel.tuter"
+                    "user_name": "Abel.tuter"
                   },
                   "assignment_group": {
-                  "name": "Software",
-                  }
+                    "name": "App Engine Admins"
+                  },
                   "start_date": "2025-01-05 08:00:00",
-                  "end_date": "2025-01-08 08:00:00"
+                  "end_date": "2025-01-08 08:00:00",
+                  "cab_required": "true",
+                  "priority": 2,
+                  "work_notes": "Text from devops"
                 }
               }
