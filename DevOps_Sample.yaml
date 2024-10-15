@@ -17,7 +17,7 @@ stages:
                 "setCloseCode" : true,
                 "attributes": {
                   "requested_by": {
-                    "user_name": "ravishankar.n"
+                    "user_name": "ravishankar n"
                   },
                   "short_description":"Sysintegra DevOps Onboarding",
                   "description":"Sysintegra DevOps Onboarding",
