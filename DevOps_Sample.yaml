@@ -19,7 +19,9 @@ stages:
                   "requested_by": {
                     "user_name": "abel.tuter"
                   },
-                  "assignment_group": "8a4dde73c6112278017a6a4baf547aa7",
+                  "assignment_group": {
+                  "name": "Software",
+                  }
                   "start_date": "2025-01-05 08:00:00",
                   "end_date": "2025-01-08 08:00:00"
                 }
