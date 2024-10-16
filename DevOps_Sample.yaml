@@ -19,7 +19,7 @@ stages:
      - job: 
        steps:
         - script: echo "This is the code deployment phase to test instance."
-  - stage: QA/UAT
+  - stage: QA
     jobs:
      - job: 
        steps:
