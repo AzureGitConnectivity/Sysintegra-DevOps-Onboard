@@ -4,23 +4,33 @@ pool:
   vmImage: ubuntu-latest
 
 stages:
+  - stage: Plan
+    jobs:
+      - job: Planning_Phase
+        steps:
+          - script: echo "This is the planning phase of the request."
   - stage: Build
     jobs:
-      - job: Build_Job_A
-        steps:
-          - script: echo This is the first Build Job!
-  - stage: Test
-    jobs:
-     - job: Test_Job_A
+     - job: Development_Phase
        steps:
-        - script: echo This is the first Test Job!
-
-  - stage: Prod_Deploy    
+        - script: echo "This is the development phase of the request."
+  - stage: Migration
     jobs:
-     - job: Prod_Job_A
+     - job: Migration_to_Test_Environment
+       steps:
+        - script: echo "This is the code deployment phase to test instance."
+  - stage: UAT
+    jobs:
+     - job: UAT_Testing_Phase
+       steps:
+        - script: echo "This is the UAT testing phase of the request."
+        
+  - stage: Production_Deployment    
+    jobs:
+     - job: Production_Deployment_Phase
        pool: server
        steps:
-#- script: echo This is the first Prod-deploy Job!
+#- script: echo This is the production deployement phase!
         - task: ServiceNow-DevOps-Server-Change-Acceleration@1
           inputs:
             connectedServiceName: 'sysintegraptyltddemo17-Sysintegra DevOps Onboard-ServiceNow DevOps Service Connection'
