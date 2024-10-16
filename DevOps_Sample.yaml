@@ -36,6 +36,6 @@ stages:
                   },
                   "start_date": "2025-01-05 08:00:00",
                   "end_date": "2025-01-08 08:00:00",
-                  "work_notes": "Text from devops"
+                  "work_notes": "Testing DevOps Change Velocity"
                 }
               }
