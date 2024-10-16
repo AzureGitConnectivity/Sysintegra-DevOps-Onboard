@@ -9,17 +9,17 @@ stages:
       - job: 
         steps:
           - script: echo "This is the planning phase of the request."
-  - stage: Sandbox
-    jobs:
-     - job: 
-       steps:
-        - script: echo "This is the development phase of the request."
   - stage: Dev
     jobs:
      - job: 
        steps:
-        - script: echo "This is the code deployment phase to test instance."
+        - script: echo "This is the development phase of the request."
   - stage: QA
+    jobs:
+     - job: 
+       steps:
+        - script: echo "This is the code deployment phase to test instance."
+  - stage: UAT
     jobs:
      - job: 
        steps:
