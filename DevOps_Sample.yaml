@@ -37,7 +37,7 @@ stages:
             changeRequestDetails: |              
               {
                 "setCloseCode" : true,
-                "autoCloseChange" : true,
+                "autoCloseChange" : true, 
                 "attributes": {
                   "requested_by": {
                     "user_name": "Abel.tuter"
