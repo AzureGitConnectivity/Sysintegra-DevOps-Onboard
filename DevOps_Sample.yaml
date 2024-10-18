@@ -37,6 +37,7 @@ stages:
             changeRequestDetails: |              
               {
                 "setCloseCode" : true,
+                "autoCloseChange" : true,
                 "attributes": {
                   "requested_by": {
                     "user_name": "Abel.tuter"
@@ -49,3 +50,8 @@ stages:
                   "work_notes": "Testing DevOps Change Velocity"
                 }
               }
+              - task: PublishBuildArtifacts@1
+                inputs:
+                  PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+                  ArtifactName: 'Demo v1'
+                  publishLocation: 'Container'
