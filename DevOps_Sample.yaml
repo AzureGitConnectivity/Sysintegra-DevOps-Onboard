@@ -38,7 +38,7 @@ stages:
               {
                 "setCloseCode" : true,
                 "autoCloseChange" : true, 
-                "attributes": {
+                "attributes": { 
                   "requested_by": {
                     "user_name": "Abel.tuter"
                   },
