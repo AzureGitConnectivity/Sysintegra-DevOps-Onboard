@@ -5,7 +5,7 @@ pool:
 
 stages:
   - stage: Build
-    jobs:
+    jobs: 
       - job: Build
         steps:
           - script: echo "This is the planning phase of the request."
