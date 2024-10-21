@@ -8,7 +8,7 @@ stages:
   - stage: Dev
     jobs:  
       - job: Initial_Source
-        steps: 
+        steps:  
           - script: echo Dev Phase 
   - stage: QA
     jobs:
