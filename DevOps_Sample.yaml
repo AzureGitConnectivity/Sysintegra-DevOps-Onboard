@@ -1,18 +1,29 @@
 stages:
   - stage: Build
     jobs:
-      - job: Build_Job_A
+      - job: Build
         steps:
-          - script: echo This is the first Build Job!
-  - stage: Test
+          - script: echo Build Phase
+  - stage: Dev
     jobs:
-     - job: Test_Job_A
+     - job: Initial Source
        steps:
-        - script: echo This is the first Test Job!
-
-  - stage: Prod_Deploy    
+        - script: echo Dev Phase
+   - stage: QA
     jobs:
-     - job: Prod_Job_A
+     - job: Unit_Test
+       steps:
+        - script: echo Unit Testing Phase
+
+   - stage: UAT
+    jobs:
+     - job: Regression_Test
+       steps:
+        - script: echo UAT Testing Phase
+
+   - stage: Prod  
+    jobs:
+     - job: Final_Deployment
        pool: server
        steps:
 #- script: echo This is the first Prod-deploy Job!
