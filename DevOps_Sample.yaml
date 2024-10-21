@@ -29,23 +29,21 @@ stages:
 #- script: echo This is the first Prod-deploy Job!
         - task: ServiceNow-DevOps-Server-Change-Acceleration@1
           inputs:
-            connectedServiceName: 'dev271065-Dev271065-ServiceNow DevOps Service Connection'
-            applicationName: 'firstDevopsApp'
-            changeRequestDetails: |              
-              {
+           connectedServiceName: 'sysintegraptyltddemo17-Sysintegra DevOps Onboard-ServiceNow DevOps Service Connection'
+            changeRequestDetails:  |
+            {
                 "setCloseCode" : true,
                 "attributes": {
                   "requested_by": {
                     "user_name": "Abel.tuter"
                   },
                   "assignment_group": {
-                    "sys_id": "477a05d153013010b846ddeeff7b1225"
+                    "name": "App Engine Admins"
                   },
                   "start_date": "2025-01-05 08:00:00",
                   "end_date": "2025-01-08 08:00:00",
                   "cab_required": "true",
                   "priority": 2,
-                  "u_sample": "This is sample string",
                   "work_notes": "Text from devops"
                 }
               }
