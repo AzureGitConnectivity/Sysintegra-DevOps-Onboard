@@ -1,3 +1,4 @@
+---
 stages:
   - stage: Build
     jobs:
@@ -6,44 +7,40 @@ stages:
           - script: echo Build Phase
   - stage: Dev
     jobs:
-     - job: Initial Source
-       steps:
-        - script: echo Dev Phase
-   - stage: QA
+      - job: Initial_Source
+        steps:
+          - script: echo Dev Phase
+  - stage: QA
     jobs:
-     - job: Unit_Test
-       steps:
-        - script: echo Unit Testing Phase
-
-   - stage: UAT
+      - job: Unit_Test
+        steps:
+          - script: echo Unit Testing Phase
+  - stage: UAT
     jobs:
-     - job: Regression_Test
-       steps:
-        - script: echo UAT Testing Phase
-
-   - stage: Prod  
+      - job: Regression_Test
+        steps:
+          - script: echo UAT Testing Phase
+  - stage: Prod
     jobs:
-     - job: Final_Deployment
-       pool: server
-       steps:
-#- script: echo This is the first Prod-deploy Job!
-        - task: ServiceNow-DevOps-Server-Change-Acceleration@1
-          inputs:
-           connectedServiceName: 'sysintegraptyltddemo17-Sysintegra DevOps Onboard-ServiceNow DevOps Service Connection'
-            changeRequestDetails:  |
-            {
-                "setCloseCode" : true,
-                "attributes": {
-                  "requested_by": {
-                    "user_name": "Abel.tuter"
-                  },
-                  "assignment_group": {
-                    "name": "App Engine Admins"
-                  },
-                  "start_date": "2025-01-05 08:00:00",
-                  "end_date": "2025-01-08 08:00:00",
-                  "cab_required": "true",
-                  "priority": 2,
-                  "work_notes": "Text from devops"
-                }
-              }
+      - job: Final_Deployment
+        pool: server
+        steps:
+          - task: ServiceNow-DevOps-Server-Change-Acceleration@1
+            inputs:
+              connectedServiceName: sysintegraptyltddemo17-Sysintegra DevOps
+                Onboard-ServiceNow DevOps Service Connection
+              changeRequestDetails: |
+                {
+                    "setCloseCode" : true,
+                    "attributes": {
+                      "requested_by": {
+                        "user_name": "Abel.tuter"
+                      },
+                      "assignment_group": {
+                        "name": "App Engine Admins"
+                      },
+                      "start_date": "2025-01-05 08:00:00",
+                      "end_date": "2025-01-08 08:00:00",
+                      "work_notes": "Text from devops"
+                    }
+                  }
