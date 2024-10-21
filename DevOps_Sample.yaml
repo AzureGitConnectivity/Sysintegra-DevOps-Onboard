@@ -6,7 +6,7 @@ stages:
         steps:
           - script: echo Build Phase
   - stage: Dev
-    jobs:
+    jobs: 
       - job: Initial_Source
         steps:
           - script: echo Dev Phase
