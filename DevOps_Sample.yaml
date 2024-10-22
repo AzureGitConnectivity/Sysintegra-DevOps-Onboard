@@ -1,6 +1,6 @@
 ---
 stages:
-  - stage:  Build
+  - stage:  Jira_Build
     jobs:
       - job: Initial_Build
         steps:
