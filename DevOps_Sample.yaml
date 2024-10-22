@@ -1,28 +1,28 @@
 ---
 stages:
-  - stage: Build
+  - stage:  Build
     jobs:
-      - job: Build
+      - job: Initial_Build
         steps:
           - script: echo Build Phase
-  - stage: Dev
+  - stage: Integration
     jobs:  
-      - job: Initial_Source
+      - job: UI_Test
         steps:  
           - script: echo Dev Phase 
-  - stage: QA
+  - stage: Release
     jobs:
-      - job: Unit_Test
+      - job: Release_Stage_To_Deploy
         steps:
           - script: echo Unit Testing Phase
-  - stage: UAT
+  - stage: Approval
     jobs:
-      - job: Regression_Test
+      - job: Change_Approval
         steps:
           - script: echo UAT Testing Phase
-  - stage: Prod
+  - stage: Deployment
     jobs:
-      - job: Final_Deployment
+      - job: Production_Deployment
         pool: server
         steps:
           - task: ServiceNow-DevOps-Server-Change-Acceleration@1
