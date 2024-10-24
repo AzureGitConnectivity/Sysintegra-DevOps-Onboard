@@ -9,17 +9,17 @@ stages:
     jobs:  
       - job: UI_Test
         steps:  
-          - script: echo Dev Phase 
+          - script: echo UI Phase 
   - stage: Release
     jobs:
       - job: Release_Stage_To_Deploy
         steps:
-          - script: echo Unit Testing Phase
+          - script: echo Release Phase
   - stage: Approval
     jobs:
       - job: Change_Approval
         steps:
-          - script: echo UAT Testing Phase
+          - script: echo Approval Phase
   - stage: Deployment
     jobs:
       - job: Production_Deployment
