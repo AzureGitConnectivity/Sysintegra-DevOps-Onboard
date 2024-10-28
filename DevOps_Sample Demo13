@@ -1,0 +1,46 @@
+---
+stages:
+  - stage:  Build
+    jobs:
+      - job: Initial_Build 
+        steps:
+          - script: echo Build Phase
+  - stage: Integration 
+    jobs:  
+      - job: UI_Test 
+        steps:   
+          - script: echo UI Phase 
+  - stage: Release
+    jobs:
+      - job: Release_Stage_To_Deploy
+        steps:
+          - script: echo Release Phase
+  - stage: Approval
+    jobs:
+      - job: Change_Approval
+        steps:
+          - script: echo Approval Phase
+  - stage: Deployment
+    jobs:
+      - job: Production_Deployment
+        pool: server
+        steps:
+          - task: ServiceNow-DevOps-Server-Change-Acceleration@1
+            inputs:
+              connectedServiceName: sysintegraptyltddemo17-Sysintegra DevOps
+                Onboard-ServiceNow DevOps Service Connection
+              changeRequestDetails: |
+                {
+                    "setCloseCode" : true,
+                    "attributes": {
+                      "requested_by": {
+                        "user_name": "Abel.tuter"
+                      },
+                      "assignment_group": {
+                        "name": "App Engine Admins"
+                      },
+                      "start_date": "2025-01-05 08:00:00",
+                      "end_date": "2025-01-08 08:00:00",
+                      "work_notes": "Text from devops"
+                    }
+                  }
