@@ -27,8 +27,7 @@ stages:
         steps:
           - task: ServiceNow-DevOps-Server-Change-Acceleration@1
             inputs:
-              connectedServiceName: sysintegraptyltddemo17-Sysintegra DevOps
-                Onboard-ServiceNow DevOps Service Connection
+              connectedServiceName: sysintegraptyltddemo13-Sysintegra DevOps Onboard-ServiceNow DevOps Service Connection
               changeRequestDetails: |
                 {
                     "setCloseCode" : true,
