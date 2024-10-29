@@ -5,7 +5,7 @@ stages:
       - job: Initial_Build 
         steps:
           - script: echo Build Phase
-  - stage: Integration 
+  - stage: Integration  
     jobs:  
       - job: UI_Test 
         steps:   
@@ -24,7 +24,7 @@ stages:
     jobs:
       - job: Production_Deployment
         pool: server
-        steps:
+        steps: 
           - task: ServiceNow-DevOps-Server-Change-Acceleration@1
             inputs:
               connectedServiceName: sysintegraptyltddemo13-Sysintegra DevOps Onboard-ServiceNow DevOps Service Connection
