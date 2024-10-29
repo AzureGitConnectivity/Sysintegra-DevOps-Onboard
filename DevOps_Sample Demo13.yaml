@@ -6,7 +6,7 @@ stages:
         steps:
           - script: echo Build Phase 
   - stage: Integration  
-    jobs:  
+    jobs:   
       - job: UI_Test 
         steps:   
           - script: echo UI Phase 
